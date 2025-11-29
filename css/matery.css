@@ -2138,3 +2138,11 @@ footer .copy-right {
     padding: 0;
     margin: 0;
 }
+
+/* 关闭首页封面的彩色渐变滤镜覆盖层 */
+.bg-cover:before,
+.bg-cover:after {
+    background: none !important;
+    -webkit-animation: none !important;
+    animation: none !important;
+}
