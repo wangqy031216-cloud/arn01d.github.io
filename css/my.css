@@ -1,4 +1,0 @@
-/* 去掉首页 banner 上的红色遮罩 */
-.bg-cover::before {
-  background-color: transparent !important;
-}
