@@ -1,1 +1,31 @@
 /* Here is your custom css styles. */
+/* Prism line numbers support */
+pre[class*="language-"].line-numbers {
+  position: relative;
+  padding-left: 3.8em;
+}
+
+/* 行号栏 */
+pre[class*="language-"].line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  font-size: 100%;
+  left: 0;
+  width: 3em; 
+  user-select: none;
+  text-align: right;
+}
+
+/* 单行行号 */
+pre[class*="language-"].line-numbers .line-numbers-rows > span {
+  display: block;
+  counter-increment: linenumber;
+}
+
+pre[class*="language-"].line-numbers .line-numbers-rows > span:before {
+  content: counter(linenumber);
+  color: #999;
+  display: block;
+  padding-right: 0.8em;
+}
