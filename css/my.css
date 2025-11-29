@@ -4,6 +4,7 @@
 .highlight-wrap pre[class*="language-"].line-numbers {
   position: relative;
   padding-left: 3.5em !important;  /* 行号栏宽度 */
+  counter-reset: linenumber;       /* 关键：从 1 开始计数 */
 }
 
 /* 行号容器 */
