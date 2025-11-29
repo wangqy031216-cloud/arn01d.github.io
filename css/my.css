@@ -1,30 +1,33 @@
-/* Prism line numbers support */
-pre[class*="language-"].line-numbers {
+/* 适配 Matery 的 Prism 行号样式 */
+
+/* 给带行号的 pre 预留左侧空间 */
+.highlight-wrap pre[class*="language-"].line-numbers {
   position: relative;
-  padding-left: 3.8em;
+  padding-left: 3.5em !important;  /* 行号栏宽度 */
 }
 
-/* 行号栏 */
-pre[class*="language-"].line-numbers .line-numbers-rows {
+/* 行号容器 */
+.highlight-wrap pre[class*="language-"].line-numbers .line-numbers-rows {
   position: absolute;
   pointer-events: none;
-  top: 0;
-  font-size: 100%;
-  left: 0;
-  width: 3em; 
-  user-select: none;
+  top: 0.8em;             /* 稍微往下移一点，对齐第一行代码 */
+  left: 0.8em;           /* 紧贴左侧 */
+  width: 2.7em;          /* 行号栏宽度要和 padding-left 对应 */
   text-align: right;
+  user-select: none;
+  border-right: 1px solid #555; /* 行号和代码之间的竖线，可按需去掉 */
 }
 
-/* 单行行号 */
-pre[class*="language-"].line-numbers .line-numbers-rows > span {
+/* 每一行的行号 */
+.highlight-wrap pre[class*="language-"].line-numbers .line-numbers-rows > span {
   display: block;
   counter-increment: linenumber;
 }
 
-pre[class*="language-"].line-numbers .line-numbers-rows > span:before {
+.highlight-wrap pre[class*="language-"].line-numbers .line-numbers-rows > span:before {
   content: counter(linenumber);
-  color: #999;
+  color: #9e9e9e;       /* 行号颜色 */
   display: block;
-  padding-right: 0.8em;
+  padding-right: 0.4em; /* 和竖线之间留一点空隙 */
+  font-size: 0.9em;
 }
